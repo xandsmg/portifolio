@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 
 /* Color Pallete */
 :root {
@@ -15,11 +18,30 @@
     --button-hover: rgb(13, 112, 38);
 }
 
+/* Overall */
 body {
     background-color: var(--primary-bg);
-    display: grid;
     color: var(--text-light);
     font-family: "Google Sans Code", monospace;
+}
+
+header,
+main,
+footer {
+    margin: 0 auto;
+}
+main {
+    margin-bottom: 100px;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+p,
+a,
+li {
+    font-size: .9rem;
 }
 
 /* Buttons */
@@ -31,87 +53,382 @@ body {
     padding: 10px 20px;
     border-radius: 3px;
 }
+
 .btn:hover {
     background-color: var(--button-hover);
+    
 }
 
-@media screen and (min-width: 320px) {
-    /* Navbar */
-    header {
-        width: 90%;
-        color: var(--text-light);
-        font-family: "Ubuntu", sans-serif;
-        font-weight: 300;
-        font-style: normal;
+/* Icon Animation */
+.fa-solid {
+    background-image: linear-gradient(to right, #2A7B9B, var(--accent-color), #FC466B, rgb(255, 255, 0));
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradiente 5s linear infinite alternate;
+}
+
+@keyframes gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+    
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+/* Mobile Styles */
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+
+/* Navbar */
+.navbar {
+    max-width: 100%;
+    color: var(--text-light);
+    margin: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+/* img*/
+.navbar .gem {
+    align-self: center;
+    width: 3rem;
+    transform: rotateY(0);
+    animation: rodar 5s linear infinite;
+}
+
+@keyframes rodar {
+    to{transform: rotateY(0);}
+    from {transform: rotateY(360deg);}
+    
+}
+.navbar li:first-of-type {
+    margin-right: 20px
+}
+.navbar li {
+    display: inline-block;
+}
+
+/* Animations */
+.navbar ul li a {
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+    transition: .3s ease;
+    
+}
+
+.navbar ul li a:hover {
+    border-bottom: 3px solid var(--primary-color);
+}
+
+
+/* Hero */
+.hero-image {
+    position: relative;
+    background: url('../assets/myphotopng');
+    background-size: cover;
+    margin:0 auto;
+    max-width: 500px;
+    height: 500px;
+    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+    mask-mode: alpha;
+    animation: mexer 1s ease-in-out infinite;
+}
+@keyframes mexer {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-1px) translateX(1px);}
+    100% {transform: translateY(0);}
+}
+
+.hero img {
+    position: absolute;
+    right: 20px;
+    width: 80px;
+}
+.hero-content {
+    position: relative;
+    top: -220px;
+    padding: 20px;
+}
+
+.hero h1 {
+    border-right: 8px solid transparent;
+    color: var(--border-color);
+}
+
+.hero h1,
+.hero h2,
+.hero p,
+.hero a {
+    margin-bottom: 10px;
+}
+
+/* Animations from hero section*/
+.hero h2 i { /* ninja icon*/
+    position: unset;
+    animation: unset;
+    font-size: 1rem;
+}
+
+.hero i { /* hand on the button*/
+    background-image: linear-gradient(to right, #2A7B9B, var(--accent-color), #FC466B, rgb(255, 255, 0));
+    background-size: 300% auto;
+    /* Make the background wider than the element */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    bottom: -20px;
+    left: -21px;
+    font-size: 1.3rem;
+    margin-top: 15px;
+    animation: lupa 2s linear infinite;
+
+}
+
+
+@keyframes lupa {
+    0% {scale: 1;background-position: 0% 50%; }
+    50% {scale: 1.3;background-position: 100% 50%;}
+    100% {scale: 1; }
+
+   
+}
+
+h1 .bar {
+    display: inline;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    color: transparent;
+    animation: bar 1.3s linear infinite;
+}
+
+@keyframes bar {
+    to {
+        background-color: #fff;
     }
 
-    header img {
-        width: 3rem;
+    from {
+        background-color: transparent;
     }
+}
 
-    li {
-        display: inline;
-        margin: 0 15px;
+/* Seção Sobre Mim */
+
+#about {
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+#about img {
+    width: 50px;
+}
+
+#about h2,
+#about p,
+#about h3,
+#about ul {
+    margin-bottom: 20px;
+}
+#about ul {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 60px);
+   justify-content: center;
+   gap: 15px;
+
+}
+
+/* Animation */
+#about li{
+    padding: 5px;
+    background-image: linear-gradient(to right, #272727, #636363, rgb(27, 27, 27));
+    background-size: 300% auto;
+    animation: gradiente 5s linear infinite alternate;
+}
+@keyframes gradiente {
+    0% { background-position: 0% 50%; ;}  
+   
+    100% {background-position: 100% 50%;}
+}
+
+
+/* Seção Projetos */
+#projects {
+    padding: 20px;
+}
+#projects h2 {
+    margin-bottom: 40px;
+}
+#projects ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    justify-content: center;
+    gap: 50px;
+}
+#projects li > .about-img, h4, p, a, .btn{
+    margin-bottom: 20px;
+}
+#projects .about-img {
+    overflow: hidden;
+}
+#projects img {
+    max-width: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .3s linear;
+}
+#projects img:hover {
+    scale: 2;
+}
+#projects li {
+    padding: 15px 15px 20px 15px;
+    
+}
+
+/* FOOTER */
+footer {
+    max-width: 100%;
+    padding: 20px;
+
+}
+footer .contact {
+    justify-self: center;
+}
+.contact ul {
+    line-height: 2;
+}
+.contact #copyright{
+    font-size: .8rem;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) {
+    header,
+    main,
+    footer {
+        max-width: 80%;
     }
-
-    header h1 {
-        color: var(--text-light);
-        font-size: 1.5rem;
-        font-family: "Chonburi", serif;
-        font-weight: 400;
-        font-style: normal;
+   /* Hero Section*/
+   .hero {
+        margin-bottom: 100px;
     }
-
-    header ul li a {
-        border-bottom: 3px solid transparent;
-        transition: .3s ease;
-    }
-
-    header ul li a:hover {
-        border-bottom: 3px solid var(--primary-color);
-    }
-
-    /* Seção Hero */
-    .hero {
-        align-self: center;
+    .hero img {
+        position: absolute;
+        right: 120px;
+        width: 150px;
+        z-index: 1;
     }
     .hero-image {
-        background: url('../assets/myphotopng');
-        background-size: cover;
-        width: 400px;
-        height: 400px;
-        mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+        max-width: 600px;
+        height: 500px;
+        position: relative;
+        top: -40px;
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         mask-mode: alpha;
     }
 
-    /* Titulo da Seção Hero */
+    .hero-content {
+        position: relative;
+        top: -40px;
+        padding: 20px;
+    }
+
+}
+
+/* Laptops  1024*/
+@media screen and (min-width: 1024px) {
+    /* Overall */
+    header,
+    main,
+    footer {
+        max-width: 60%;
+    }
+    header{
+        margin-bottom: 0;
+    }
+    main {
+        margin-bottom: 100px;
+    }
     h1 {
-        border-right: 8px solid transparent;
-        color: var(--border-color);
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.2rem;
+    }
+    p,
+    a,
+    li {
+        font-size: 1.1rem;
     }
 
-    /* Disappearing Bar */
-    h1 .bar {
-        display: inline;
-        width: 10px;
-        height: 10px;
-        background-color: transparent;
-        color: transparent;
-        animation: bar 1.3s linear infinite;
+    /* Hero Section*/
+    .hero-image {
+        max-width: 600px;
+        height: 500px;
+        position: relative;
+        top: -40px;
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-mode: alpha;
     }
-    @keyframes bar {
-        to {background-color: #fff;}
-        from {background-color: transparent;}
+     .hero img {
+        position: absolute;
+        right: 230px;
+        z-index: 1;
     }
-
-    /* Sobre Mim */
-    #about img {
-        width: 100px;
-    }
-
-    /* Projetos */
-    #projects img {
-        width: 100px;
+    .hero-content {
+        position: relative;
+        top: -40px;
+        padding: 20px;
     }
 }
 
+/* Laptops L 1440*/
+
+@media screen and (min-width: 1440px) {
+    header,
+    main,
+    footer {
+        max-width: 55%;
+        
+    }
+     .hero img {
+        position: absolute;
+        right: 440px;
+    }
+}
+/* Desktop */
+@media screen and (min-width: 1536px) {
+    
+     .hero img {
+        position: absolute;
+        right: 640px;
+        z-index: 1;
+    }
+}
+
+/* big screen */
+@media screen and (min-width: 2560px) {
+     .hero img {
+        position: absolute;
+        right: 1000px;
+        z-index: 1;
+    }
+}

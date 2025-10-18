@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Essentials Meta Tags -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN's -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- CDN -->
     <link rel="stylesheet" href="./public/reset.css">
     <link rel="stylesheet" href="./public/styles.css">
     <title>João Alexandre (Portifolio)</title>
 </head>
 <body>
     <!-- Cabeçalho -->
-    <header class=" grid">
+    <header>
         <nav class="navbar">
-            <a href="index.html">
-                <img src="./assets/logo.jpg" alt="">
+            <a href="index.html" class="logo">
+                <img class="gem" src="assets/gem.png" alt="artefato mágica">
             </a>
             <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <!-- Seção Hero -->
-        <section class="hero">
+        <section class="hero" grid>
+            <img src="assets/menacing-gogogo.gif" alt="ora ora">
             <div class="hero-image"></div>
-            <h1>root@JoaoAlexandre<span style="color: #fff;">:</span><span style="color:rgb(0, 89, 255)">~</span><span style="color: #fff;">#</span> <div class="bar">|</div></h1>
-            <h2>Desenvolvedor Web</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius itaque, est inventore quas incidunt laborum sapiente dolorem
-                 animi fugiat at beatae esse ab repudiandae, eos, quos numquam sint tempore pariatur.</p>
-            <p>"estude bastante, trabalhe bastante"</p>
-            <a href="#projetos" class="btn">Ver Projetos</a>
+            <div class="hero-content">
+                <h1>root@JoaoAlexandre<span style="color: #fff;">:</span><span style="color:rgb(0, 89, 255)">~</span><span style="color: #fff;">#</span> <div class="bar">|</div></h1>
+                <h2>Desenvolvedor Web</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius itaque, est inventore quas incidunt laborum sapiente dolorem
+                     animi fugiat at beatae esse ab repudiandae, eos, quos numquam sint tempore pariatur.</p>
+                <a href="#projetos" class="btn">Ver Projetos</a><i class="fa-regular fa-hand-pointer"></i>
+            </div>
         </section>
         <!-- Sobre Mim -->
         <section id="about">
-            <h2>Sobre Mim</h2>
-            <p>(habilidades tecnicas e interesse) Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quisquam perspiciatis, corrupti soluta quo vel temporibus odio molestiae 
+            <h2><i class="fa-solid fa-scroll"></i>Sobre Mim</h2>
+            <p>Habilidades tecnicas e interesse Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quisquam perspiciatis, corrupti soluta quo vel temporibus odio molestiae 
                 provident, accusantium cum porro quidem atque molestias suscipit reiciendis beatae libero voluptates?</p>
-            <h3>Tecnologias que conheço</h3>
-            <ul>
+            <p>Tecnologias que conheço:</p>
+            <ul class="grid">
                 <li><img src="assets/html.png" alt="html"></li>
                 <li><img src="assets/css.png" alt="css"></li>
                 <li><img src="assets/js.png" alt="javascript"></li>
-                <li><img src="assets/php.png" alt="php"></li>
-                <li><img src="assets/mysql.png" alt="mysql"></li>
-                <li><img src="assets/ubuntu.png" alt="ubuntu"></li>
             </ul>
         </section>
         <!-- Projetos -->
         <section id="projects">
+            <h2><i class="fa-solid fa-boxes-stacked"></i>Projetos</h2>
             <ul>
                 <li>
                     <div class="about-img"><img src="assets/projeto1.png" alt="projetos"></div>
@@ -74,16 +74,17 @@
                 </li>            
             </ul>
         </section>
-        <footer>
-            <div class="contact">
-                <p>Meu Contato</p>
-                <ul>
-                    <li>Email: joaoalexandresmg3@gmail.com <i class="fa-solid fa-envelope"></i></li>
-                    <li>Telefone: (86)988836594 <i class="fa-solid fa-phone"></i></li>
-                </ul>
-            </div>
-        </footer>
     </main>
+    <footer>
+        <div class="contact">
+            <p>Meu Contato:</p>
+            <ul>
+                <li>joaoalexandresmg3@gmail.com <i class="fa-solid fa-envelope"></i></li>
+                <li>+55 (86) 988836594 <i class="fa-solid fa-phone"></i></li>
+            </ul>
+            <p id="copyright">Copyright&copy;<span id="copyright-result"></span></p>
+        </div>
+    </footer>
+    <script src="public/js/script.js"></script>
 </body>
-
 </html>
