@@ -295,12 +295,21 @@ footer .contact {
 }
 /* Mobile */
 
+@media screen and (min-width: 375px) {
+    .hero-content {
+        position: relative;
+        top: -160px;
+        padding: 20px;
+    }
+}
+
 @media screen and (min-width: 425px) {
     .hero-image {
         max-width: auto;
         height: 550px;
         position: relative;
     }
+    
 }
 
 /* Tablets */
