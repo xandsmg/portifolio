@@ -143,7 +143,7 @@ li {
 /* Hero */
 .hero-image {
     position: relative;
-    background: url('/public/assets/myphoto.png');
+    background: url('../assets/myphoto.png');
     background-size: cover;
     margin: 0 auto;
     max-width: 580px;
