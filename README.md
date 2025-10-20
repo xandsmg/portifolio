@@ -18,9 +18,9 @@ Agora acesse a pasta onde se encontra o arquivo html raiz. Após entrar, abra-o 
 
 ## 🛠️ Construído com
 
-* [HTML](https://www.w3schools.com/html/) - Esqueleto da página.
-* [CSS](https://www.w3schools.com/html/) - Estilizador da página.
-* [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Usado para proporcionar a dinâmica no site.
+* HTML
+* CSS
+* Javascript
 
 ## ✒️ Autores
 
